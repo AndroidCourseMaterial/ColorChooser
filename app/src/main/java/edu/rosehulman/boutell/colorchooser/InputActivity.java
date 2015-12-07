@@ -2,7 +2,6 @@ package edu.rosehulman.boutell.colorchooser;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,8 +31,8 @@ public class InputActivity extends AppCompatActivity {
         mEditText = (EditText) findViewById(R.id.activity_input_message);
 
         Intent intent = getIntent();
-        mMessage = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        mCurrentBackgroundColor = intent.getIntExtra(MainActivity.EXTRA_COLOR, Color.GRAY);
+        mMessage = "Hello World";
+        mCurrentBackgroundColor = Color.GRAY;
         updateUI();
 
         Button colorButton = (Button) findViewById(R.id.activity_input_button);
@@ -69,13 +68,9 @@ public class InputActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
                         mCurrentBackgroundColor = selectedColor;
                         mMessage = mEditText.getText().toString();
-
                         updateUI();
-                        Intent returnIntent = new Intent();
-                        returnIntent.putExtra(MainActivity.EXTRA_MESSAGE, mMessage);
-                        returnIntent.putExtra(MainActivity.EXTRA_COLOR, mCurrentBackgroundColor);
-                        setResult(Activity.RESULT_OK, returnIntent);
-                        finish();
+						// TODO: Use an intent to send info back to activity that called this one for a result.
+					   
                     }
                 })
                 .setNegativeButton(getString(android.R.string.cancel), null)

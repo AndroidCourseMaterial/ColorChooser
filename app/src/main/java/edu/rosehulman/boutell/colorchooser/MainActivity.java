@@ -14,10 +14,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
-    public static final String EXTRA_COLOR = "EXTRA_COLOR";
-    static final int PICK_CONTACT_REQUEST = 1;  // The request code
-    private static final int REQUEST_CODE_INPUT = 2;
     private RelativeLayout mLayout;
     private TextView mTextView;
     private String mMessage = "This is your phone. Please rescue me!";
