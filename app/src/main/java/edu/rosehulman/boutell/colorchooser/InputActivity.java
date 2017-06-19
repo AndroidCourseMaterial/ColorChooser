@@ -30,7 +30,6 @@ public class InputActivity extends AppCompatActivity {
         mLayout = (RelativeLayout) findViewById(R.id.activity_input_layout);
         mEditText = (EditText) findViewById(R.id.activity_input_message);
 
-        Intent intent = getIntent();
         mMessage = "Hello World";
         mCurrentBackgroundColor = Color.GRAY;
         updateUI();
